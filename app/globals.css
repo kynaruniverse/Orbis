@@ -1,0 +1,64 @@
+:root {
+  --orbis-bg: #150C24;
+  --orbis-surface: #241536;
+  --orbis-text: #F3ECDD;
+  --orbis-muted: #B6A9CE;
+  --orbis-accent: #FF3D68;
+  --orbis-accent-2: #7B5CFF;
+  --radius: 10px;
+  --font-body: 'Work Sans', sans-serif;
+  --font-display: 'Fraunces', serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--orbis-bg);
+  color: var(--orbis-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.4em 0;
+}
+
+a { color: var(--orbis-accent-2); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+button, .btn {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius);
+  padding: 10px 20px;
+  cursor: pointer;
+  background: var(--orbis-accent);
+  color: var(--orbis-bg);
+}
+button:disabled { opacity: 0.5; cursor: default; }
+
+input, textarea, select {
+  font-family: var(--font-body);
+  font-size: 15px;
+  border: 1px solid var(--orbis-muted);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  background: var(--orbis-surface);
+  color: var(--orbis-text);
+}
+
+input:focus, textarea:focus, select:focus, button:focus-visible {
+  outline: 2px solid var(--orbis-accent-2);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
