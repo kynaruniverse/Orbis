@@ -24,33 +24,36 @@ export default function Login() {
   }
 
   return (
-    <main style={{ padding: 24, maxWidth: 400, margin: '0 auto', fontFamily: 'sans-serif' }}>
-      <h1>Log in</h1>
-      <form onSubmit={handleLogin}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          style={{ display: 'block', width: '100%', padding: 10, marginBottom: 10 }}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          style={{ display: 'block', width: '100%', padding: 10, marginBottom: 10 }}
-        />
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-        <button type="submit" disabled={loading} style={{ padding: '10px 20px' }}>
-          {loading ? 'Logging in...' : 'Log in'}
-        </button>
-      </form>
-      <p style={{ marginTop: 16 }}>
-        No account yet? <a href="/signup">Sign up</a>
-      </p>
+    <main style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24 }}>
+      <div style={{ width: '100%', maxWidth: 380, background: 'var(--orbis-surface)', borderLeft: '4px solid var(--orbis-accent-2)', borderRadius: 8, padding: 32 }}>
+        <h1 style={{ fontSize: 28 }}>Welcome back</h1>
+        <p style={{ color: 'var(--orbis-muted)', marginTop: -8, marginBottom: 20 }}>Log in to your World.</p>
+        <form onSubmit={handleLogin}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            style={{ display: 'block', width: '100%', marginBottom: 10 }}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            style={{ display: 'block', width: '100%', marginBottom: 10 }}
+          />
+          {error && <p style={{ color: 'var(--orbis-accent)' }}>{error}</p>}
+          <button type="submit" disabled={loading} style={{ width: '100%' }}>
+            {loading ? 'Logging in...' : 'Log in'}
+          </button>
+        </form>
+        <p style={{ marginTop: 16, fontSize: 14 }}>
+          No account yet? <a href="/signup">Sign up</a>
+        </p>
+      </div>
     </main>
   )
 }
